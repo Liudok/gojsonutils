@@ -29,7 +29,7 @@ var jsonTests = []struct {
 }
 
 func TestJsonUtils_ReadJSON(t *testing.T) {
-	var testUtils JsonUtils
+	var testUtils JSONUtils
 	for _, e := range jsonTests {
 		testUtils.MaxSize = e.maxSize
 		testUtils.AllowUnknownFields = e.allowUnknown

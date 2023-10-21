@@ -18,12 +18,12 @@ type JSONResponse struct {
 
 // Type used to instantiate the module. Any variable of this type
 // will have access to all the methods with the receiver *JsonRW
-type JsonUtils struct{
+type JSONUtils struct{
 	MaxSize int64
 	AllowUnknownFields bool
 }
 
-func (ju *JsonUtils) ReadJSON(w http.ResponseWriter, r *http.Request, data any) error {
+func (ju *JSONUtils) ReadJSON(w http.ResponseWriter, r *http.Request, data any) error {
 	
 	maxBytes := int64(1048576) // 1 Mb
 	
@@ -83,7 +83,7 @@ func (ju *JsonUtils) ReadJSON(w http.ResponseWriter, r *http.Request, data any) 
 	return nil
 }
 
-func (ju *JsonUtils) WriteJSON(w http.ResponseWriter, status int, data any, headers ...http.Header ) error {
+func (ju *JSONUtils) WriteJSON(w http.ResponseWriter, status int, data any, headers ...http.Header ) error {
 	out, err := json.Marshal(data)
 	if err != nil {
 		return err
@@ -106,7 +106,7 @@ func (ju *JsonUtils) WriteJSON(w http.ResponseWriter, status int, data any, head
 	return nil
 }
 
-func (ju *JsonUtils) ErrorJSON(w http.ResponseWriter, err error, status ...int ) error {
+func (ju *JSONUtils) ErrorJSON(w http.ResponseWriter, err error, status ...int ) error {
 	statusCode := http.StatusBadRequest
 
 	if len(status) > 0 {

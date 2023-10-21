@@ -5,7 +5,7 @@ import "testing"
 const testStringLength = 58
 
 func TestJsonUtils_RandomString(t *testing.T) {
-	var testUtils JsonUtils
+	var testUtils JSONUtils
 
 	s := testUtils.RandomString(testStringLength)
 	if len(s) != testStringLength {
@@ -14,7 +14,7 @@ func TestJsonUtils_RandomString(t *testing.T) {
 }
 
 func TestJsonUtils_RandomStringOfDigits(t *testing.T) {
-	var testUtils JsonUtils
+	var testUtils JSONUtils
 
 	s := testUtils.RandomStringOfDigits(testStringLength)
 	if len(s) != testStringLength {

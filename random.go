@@ -11,7 +11,7 @@ const digits = "0123456789"
 
 
 // RandomString generates a random string of length n (letters only)
-func (t* JsonUtils) RandomString(n int) string {
+func (t* JSONUtils) RandomString(n int) string {
 	var sb strings.Builder
 	k := len(letters)
 
@@ -25,7 +25,7 @@ func (t* JsonUtils) RandomString(n int) string {
 
 
 // RandomAlphaNumeric generates a random string of length n of numbers, lower and upper case letters
-func (t* JsonUtils) RandomAlphaNumeric(n int) string {
+func (t* JSONUtils) RandomAlphaNumeric(n int) string {
 	var sb strings.Builder
 	k := len(alphanumeric)
 
@@ -39,7 +39,7 @@ func (t* JsonUtils) RandomAlphaNumeric(n int) string {
 
 
 // RandomStringOfDigits generates a random string of digits of length n
-func (t* JsonUtils) RandomStringOfDigits(n int) string {
+func (t* JSONUtils) RandomStringOfDigits(n int) string {
 	var sb strings.Builder
 	k := len(digits)
 
